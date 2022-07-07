@@ -12,6 +12,13 @@
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">Tabel</li>
                 @endif
             </ol>
+            @if (request()->is('/'))
+                <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+            @elseif (request()->is('home'))
+                <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
+            @elseif (request()->is('tabel'))
+                <h6 class="font-weight-bolder text-white mb-0">Tabel</h6>
+            @endif
             {{-- <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6> --}}
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">

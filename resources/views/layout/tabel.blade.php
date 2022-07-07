@@ -3,9 +3,18 @@
     <div class="container-fluid py-4">
         <div class="row">
             <div class="col-12">
+
+                {{-- PESAN --}}
+                @if (session('pesan'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                    <h4><i class="icon fa fa-check"></i> Absen berhasil</h4>
+                    {{session('pesan')}}.
+                </div>
+                @endif
+
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        {{-- <h6>Authors table</h6> --}}
                         <a class="btn bg-gradient-dark mb-0" href="/tabel/add"><i class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card</a>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">

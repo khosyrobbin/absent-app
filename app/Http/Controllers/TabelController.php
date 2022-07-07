@@ -47,7 +47,7 @@ class TabelController extends Controller
         ];
 
         $this->AbsenModel->addData($data);
-        return redirect()->route('tabel');
+        return redirect()->route('tabel')->with('pesan');
     }
 
     // edit
