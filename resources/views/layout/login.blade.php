@@ -40,7 +40,14 @@
         <div class="row">
             <div class="col-12">
                 <!-- Navbar -->
-                {{-- @include('layout.navbarLogin') --}}
+                <nav
+                    class="navbar navbar-expand-lg blur border-radius-lg top-0 z-index-3 shadow position-absolute mt-4 py-2 start-0 end-0 mx-4">
+                    <div class="container-fluid">
+                        <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3">
+                            Absen Magang Pelindo
+                        </a>
+                    </div>
+                </nav>
                 <!-- End Navbar -->
             </div>
         </div>
@@ -60,7 +67,10 @@
                                     <form role="form" method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="mb-3">
-                                            <input id="email" type="email" class="form-control form-control-lg" @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Email" aria-label="Email" required autocomplete="email" autofocus>
+                                            <input id="email" type="email" class="form-control form-control-lg"
+                                                @error('email') is-invalid @enderror" name="email"
+                                                value="{{ old('email') }}" placeholder="Email" aria-label="Email"
+                                                required autocomplete="email" autofocus>
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -69,7 +79,10 @@
                                             @enderror
                                         </div>
                                         <div class="mb-3">
-                                            <input id="password" type="password" class="form-control form-control-lg" @error('password') is-invalid @enderror" placeholder="Password" aria-label="Password" name="password" required autocomplete="current-password">
+                                            <input id="password" type="password" class="form-control form-control-lg"
+                                                @error('password') is-invalid @enderror" placeholder="Password"
+                                                aria-label="Password" name="password" required
+                                                autocomplete="current-password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -85,7 +98,7 @@
                                                 class="btn btn-lg btn-primary btn-lg w-100 mt-4 mb-0">{{ __('Login') }}</button>
                                             @if (Route::has('password.request'))
                                                 <a class="btn btn-link" href="{{ route('password.request') }}">
-                                                    {{ __('Forgot Your Password?') }}
+                                                    {{-- {{ __('Forgot Your Password?') }} --}}
                                                 </a>
                                             @endif
                                         </div>

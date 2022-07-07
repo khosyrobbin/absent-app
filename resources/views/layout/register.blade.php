@@ -18,21 +18,21 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="{{asset('template')}}/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="{{asset('template')}}/assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('template') }}/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="{{ asset('template') }}/assets/img/favicon.png">
     <title>
         Absen Magang Pelindo
     </title>
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
-    <link href="{{asset('template')}}/assets/css/nucleo-icons.css" rel="stylesheet" />
-    <link href="{{asset('template')}}/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="{{ asset('template') }}/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="{{ asset('template') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-    <link href="{{asset('template')}}/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="{{ asset('template') }}/assets/css/nucleo-svg.css" rel="stylesheet" />
     <!-- CSS Files -->
-    <link id="pagestyle" href="{{asset('template')}}/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+    <link id="pagestyle" href="{{ asset('template') }}/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -120,29 +120,57 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <form role="form">
+                            <form role="form" method="POST" action="{{ route('register') }}">
+                                @csrf
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Name" aria-label="Name">
+                                    <input id="name" type="text" class="form-control"
+                                        @error('name') is-invalid @enderror" name="name"
+                                        value="{{ old('name') }}" placeholder="Name" aria-label="Name">
+                                    @error('name')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                {{-- <div class="mb-3">
+                                    <input id="no_telpon" class="form-control" @error('no_telpon') is-invalid @enderror"
+                                        name="no_telpon" placeholder="No HP">
+                                    @error('no_telpon')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div> --}}
+                                <div class="mb-3">
+                                    <input id="email" type="email"
+                                        class="form-control @error('email') is-invalid @enderror" name="email"
+                                        value="{{ old('email') }}" required autocomplete="email"
+                                        placeholder="Enter Email">
+                                    @error('email')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" placeholder="Email"
-                                        aria-label="Email">
+                                    <input id="password" type="password"
+                                        class="form-control @error('password') is-invalid @enderror" name="password"
+                                        placeholder="Enter password">
+                                    @error('password')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <input type="password" class="form-control" placeholder="Password"
-                                        aria-label="Password">
+                                    <input id="password-confirm" type="password" class="form-control"
+                                        name="password_confirmation" required autocomplete="new-password"
+                                        placeholder="Enter confirm password">
                                 </div>
-                                <div class="form-check form-check-info text-start">
-                                    <input class="form-check-input" type="checkbox" value=""
-                                        id="flexCheckDefault" checked>
-                                    <label class="form-check-label" for="flexCheckDefault">
-                                        I agree the <a href="javascript:;" class="text-dark font-weight-bolder">Terms
-                                            and Conditions</a>
-                                    </label>
-                                </div>
+
                                 <div class="text-center">
-                                    <button type="button" class="btn bg-gradient-dark w-100 my-4 mb-2">Sign
-                                        up</button>
+                                    <button type="submit"
+                                        class="btn bg-gradient-dark w-100 my-4 mb-2">{{ __('Register') }}</button>
                                 </div>
                                 <p class="text-sm mt-3 mb-0">Already have an account? <a href="javascript:;"
                                         class="text-dark font-weight-bolder">Sign in</a></p>
@@ -209,10 +237,10 @@
     </footer> --}}
     <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
     <!--   Core JS Files   -->
-    <script src="{{asset('template')}}/assets/js/core/popper.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/core/bootstrap.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="{{asset('template')}}/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="{{ asset('template') }}/assets/js/core/popper.min.js"></script>
+    <script src="{{ asset('template') }}/assets/js/core/bootstrap.min.js"></script>
+    <script src="{{ asset('template') }}/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="{{ asset('template') }}/assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script>
         var win = navigator.platform.indexOf('Win') > -1;
         if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -225,7 +253,7 @@
     <!-- Github buttons -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-    <script src="{{asset('template')}}/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
+    <script src="{{ asset('template') }}/assets/js/argon-dashboard.min.js?v=2.0.4"></script>
 </body>
 
 </html>
