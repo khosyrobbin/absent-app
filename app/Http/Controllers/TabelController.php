@@ -34,57 +34,78 @@ class TabelController extends Controller
     public function simpan(){
         Request()->validate([
             'id' => 'required',
-            'waktu' => 'required',
+            // 'waktu' => 'required',
             'deskripsi' => 'required',
-            'status' => 'required'
+            'status' => 'required',
+            // 'tanggal' => 'required',
         ]);
 
         $data = [
             'id' => Request()->id,
-            'waktu' => Request()->waktu,
+            // 'waktu' => Request()->waktu,
             'deskripsi' => Request()->deskripsi,
             'status' => Request()->status,
+            // 'tanggal' => Request()->tanggal,
         ];
 
         $this->AbsenModel->addData($data);
-        return redirect()->route('tabel')->with('pesan');
+        return redirect()->route('tabel')->with('pesan','Berhasil');
     }
 
     // edit
-    // public function edit($id_absen){
-    //     $data = [
-    //         'absen' => $this->AbsenModel->detailData($id_absen),
-    //     ];
-    // return view('layout.absenEdit', $data);
-    // }
+    public function edit($id_absen){
+        $data = [
+            'absen' => $this->AbsenModel->detailData($id_absen),
+        ];
+    return view('layout.editAbsen', $data);
+    }
 
-    // // update
-    // public function update($id_absen){
-    //     Request()->validate([
-    //         'id' => 'required|unique:absens,id',
-    //         'nama' => 'required',
-    //         'waktu' => 'required',
-    //         'deskripsi' => 'required',
-    //         'poin' => 'required',
-    //         'status' => 'required',
-    //     ]);
+    // update
+    public function update($id_absen){
+        Request()->validate([
+            'id' => 'required',
+            // 'waktu' => 'required',
+            'deskripsi' => 'required',
+            'status' => 'required',
+            // 'tanggal' => 'required',
+        ]);
 
-    //     $data = [
-    //         'id' => Request()->id,
-    //         'nama' => Request()->nama,
-    //         'waktu' => Request()->waktu,
-    //         'deskripsi' => Request()->deskripsi,
-    //         'poin' => Request()->poin,
-    //         'status' => Request()->status,
-    //     ];
-    //     $this->AbsenModel->editData($id_absen,$data);
-    //     return redirect()->route('absen')->with('pesan','Absen telah diperbarui');
-    // }
+        $data = [
+            'id' => Request()->id,
+            // 'waktu' => Request()->waktu,
+            'deskripsi' => Request()->deskripsi,
+            'status' => Request()->status,
+            // 'tanggal' => Request()->tanggal,
+        ];
 
-    // // delete
-    // public function delete($id_absen){
-    //     $this->AbsenModel->deleteData($id_absen);
-    //     return redirect()->route('absen')->with('pesan','Data Berhasil Dihapus');
-    // }
+        $this->AbsenModel->editData($id_absen,$data);
+        return redirect()->route('tabel')->with('pesan','Absen telah diperbarui');
+    }
+
+    // delete
+    public function delete($id_absen){
+        $this->AbsenModel->deleteData($id_absen);
+        return redirect()->route('tabel')->with('pesan','Absen Berhasil Dihapus');
+    }
+
+    // Search data
+    public function cari(Request $request){
+        // menangkap data pencarian
+		$cari = $request->cari;
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $data = [
+            'absen' => DB::table('absens')
+            ->join('users', 'users.id', '=', 'absens.id')
+            ->where('name','like',"%".$cari."%")
+            ->orWhere('deskripsi','like',"%".$cari."%")
+            ->orWhere('status','like',"%".$cari."%")
+            ->get(),
+        ];
+
+
+        // mengirim data pegawai ke view index
+        return view('layout.tabel', $data);
+    }
 
 }

@@ -17,6 +17,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('auth');
         $this->AbsenModel = new AbsenModel();
         $this->User = new User();
     }
@@ -31,6 +32,26 @@ class HomeController extends Controller
         $data = [
             'absen' => $this->AbsenModel->allData(),
         ];
+        return view('layout.home', $data);
+    }
+
+    // Search data
+    public function cari(Request $request){
+        // menangkap data pencarian
+		$cari = $request->cari;
+
+        // mengambil data dari table pegawai sesuai pencarian data
+        $data = [
+            'absen' => DB::table('absens')
+            ->join('users', 'users.id', '=', 'absens.id')
+            ->where('name','like',"%".$cari."%")
+            ->orWhere('deskripsi','like',"%".$cari."%")
+            ->orWhere('status','like',"%".$cari."%")
+            ->get(),
+        ];
+
+
+        // mengirim data pegawai ke view index
         return view('layout.home', $data);
     }
 

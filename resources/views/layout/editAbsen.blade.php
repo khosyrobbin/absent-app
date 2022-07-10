@@ -8,7 +8,7 @@
                     </div>
                     <div class="card-body">
                         <p class="text-uppercase text-sm">Tambah Absen</p>
-                        <form action="/tabel/simpan" method="POST" enctype="multipart/form-data">
+                        <form action="/tabel/update/{{$absen->id_absen}}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-grup">
                                 <div class="col-md-6">
@@ -28,9 +28,9 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Deskripsi</label>
-                                        {{-- <input name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" type="text"> --}}
+                                        {{-- <input name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" type="text" value="{{$absen->deskripsi}}"> --}}
                                         <select name="deskripsi" class="form-control @error('id') is-invalid @enderror">
-                                            <option value="">-- Pilih --</option>
+                                            <option value="{{$absen->deskripsi}}">{{$absen->deskripsi}}</option>
                                             <option value="Magang">Magang</option>
                                             <option value="Pegawai">Pegawai</option>
                                         </select>
@@ -70,8 +70,8 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" class="form-control @error('status') is-invalid @enderror">
-                                            <option value="">-- Pilih --</option>
+                                        <select name="status" class="form-control @error('status') is-invalid @enderror" value="{{$absen->status}}">
+                                            <option value="{{$absen->status}}">{{$absen->status}}</option>
                                             <option value="absen">Absen</option>
                                             <option value="ijin">Ijin</option>
                                         </select>

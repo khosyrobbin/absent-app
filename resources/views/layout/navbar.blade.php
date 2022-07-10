@@ -9,7 +9,7 @@
                 @elseif (request()->is('home'))
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
                 @elseif (request()->is('tabel'))
-                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Tabel</li>
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Absen</li>
                 @endif
             </ol>
             @if (request()->is('/'))
@@ -17,22 +17,19 @@
             @elseif (request()->is('home'))
                 <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
             @elseif (request()->is('tabel'))
-                <h6 class="font-weight-bolder text-white mb-0">Tabel</h6>
+                <h6 class="font-weight-bolder text-white mb-0">Absen</h6>
             @endif
             {{-- <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6> --}}
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
-            <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                <div class="input-group">
-                    <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                    <input type="text" class="form-control" placeholder="Type here...">
-                </div>
-            </div>
+            {{-- Search bar --}}
+            @yield('searchBar')
+            {{-- end Search bar --}}
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
                     <a href="javascript:;" class="nav-link text-white font-weight-bold px-0">
                         <i class="fa fa-user me-sm-1"></i>
-                        <span class="d-sm-inline d-none">{{ Auth::user()->name }}</span>
+                        <span class="d-sm-inline d-none">{{Auth::user()->name}}</span>
                     </a>
                 </li>
                 {{-- <li class="nav-item d-xl-none ps-3 d-flex align-items-center">

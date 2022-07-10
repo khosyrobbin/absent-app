@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -12,7 +13,7 @@ class AbsenModel extends Model
     {
         return DB::table('absens')
         ->join('users', 'users.id', '=', 'absens.id')
-        ->paginate(5);
+        ->get();
     }
     public function addData($data){
         DB::table('absens')->insert($data);
