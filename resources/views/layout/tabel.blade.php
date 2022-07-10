@@ -44,9 +44,9 @@
                                             <td>{{ $data->status }}</td>
                                             <td>
                                                 <a href="/tabel/edit/{{ $data->id_absen }}"
-                                                    class="btn btn-sm btn-warning">EDIT</a>
+                                                    class="btn btn-warning"><i class="fas fa-pencil-alt me-2" aria-hidden="true"></i></a>
                                                 <a href="/tabel/delete/{{ $data->id_absen }}"
-                                                    class="btn btn-danger btn-sm">DELETE</a>
+                                                    class="btn btn-danger"><i class="far fa-trash-alt me-2"></i></a>
                                             </td>
                                         </tr>
                                         @elseif (auth()->user()->level==2)
@@ -60,7 +60,7 @@
                                                 <td>{{ $data->status }}</td>
                                                 <td>
                                                     <a href="/tabel/edit/{{ $data->id_absen }}"
-                                                        class="btn btn-sm btn-warning">EDIT</a>
+                                                        class="btn btn-warning"><i class="fas fa-pencil-alt me-2" aria-hidden="true"></i>EDIT</a>
                                                 </td>
                                             </tr>
                                             @endif
@@ -79,7 +79,7 @@
     @endsection
     @section('searchBar')
         <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <form action="/absen/cari" method="get">
+            <form action="/tabel/cari" method="get">
                 <div class="input-group">
                     <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
                     <input name="cari" type="text" class="form-control" placeholder="Type here...">
