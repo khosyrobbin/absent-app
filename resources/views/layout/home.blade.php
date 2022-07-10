@@ -6,7 +6,7 @@
                 <div class="card mb-4">
                     <div class="card-header pb-0">
                         {{-- <h6>Authors table</h6> --}}
-                        <a class="btn bg-gradient-dark mb-0" href="/tabel/add"><i class="fas fa-file-pdf text-lg me-1"></i>Print Absen</a>
+                        <a class="btn bg-gradient-dark mb-0" href="/home/pdf" target="_blank"><i class="fas fa-file-pdf text-lg me-1"></i>Print Absen</a>
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">

@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home/cari', [HomeController::class, 'cari']);
+Route::get('/home/pdf', [HomeController::class, 'pdf']);
 
 Route::get('/tabel', [TabelController::class, 'index'])->name('tabel');
 Route::get('/tabel/add', [TabelController::class, 'add']);
