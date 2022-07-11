@@ -52,7 +52,7 @@
             </tbody>
         </table>
 
-        <p>menyatakan bahwa yang namanya tertera diatas mealukan magang di PT. Pelindo Multi Terminal.</p>
+        <p>Menyatakan bahwa yang namanya tertera diatas melakukan magang di PT. Pelindo Multi Terminal.</p>
 
         <div style="width: 30%; text-align: left; float: right;">Banyuwangi, <span id="tanggalwaktu"></span></div><br>
         <div style="width: 30%; text-align: left; float: right;">Yang bertanda tangan,</div><br><br><br><br><br>
