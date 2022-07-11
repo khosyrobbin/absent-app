@@ -71,8 +71,13 @@
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select name="status" class="form-control @error('status') is-invalid @enderror">
-                                            <option value="">-- Pilih --</option>
-                                            <option value="absen">Absen</option>
+                                            @foreach ($absen as $data)
+                                                @if (($data->waktu > 6) && ($data->waktu < 8))
+                                                    <option value="Tepat Waktu">Absen</option>
+                                                @else
+                                                    <option value="Terlambat">Terlambat</option>
+                                                @endif
+                                            @endforeach
                                             <option value="ijin">Ijin</option>
                                         </select>
                                     </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\AbsenModel;
+use Carbon\Carbon;
 
 class TabelController extends Controller
 {
@@ -34,18 +35,14 @@ class TabelController extends Controller
     public function simpan(){
         Request()->validate([
             'id' => 'required',
-            // 'waktu' => 'required',
             'deskripsi' => 'required',
             'status' => 'required',
-            // 'tanggal' => 'required',
         ]);
 
         $data = [
             'id' => Request()->id,
-            // 'waktu' => Request()->waktu,
             'deskripsi' => Request()->deskripsi,
             'status' => Request()->status,
-            // 'tanggal' => Request()->tanggal,
         ];
 
         $this->AbsenModel->addData($data);
