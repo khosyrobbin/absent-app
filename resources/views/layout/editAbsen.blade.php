@@ -72,7 +72,6 @@
                                         <label>Status</label>
                                         <select name="status" class="form-control @error('status') is-invalid @enderror" value="{{$absen->status}}">
                                             <option value="{{$absen->status}}">{{$absen->status}}</option>
-                                            <option value="absen">Absen</option>
                                             <option value="ijin">Ijin</option>
                                         </select>
                                     </div>
