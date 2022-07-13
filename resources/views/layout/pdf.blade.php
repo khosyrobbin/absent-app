@@ -18,11 +18,12 @@
         <center>
             <img src="https://pelindo.co.id/uploads/config/kkX2Ik4l3I5cteU6ZTTKHpbYuWkfNGdBZEhE5lrT.png" alt=""
                 class="navbar-brand-img h-10" width="240" height="70">
-            <h4>LAPORAN ABSEN MAGANG PELINDO</h4>
+            <h4 style="font-weight: bold">LAPORAN ABSEN MAGANG PELINDO</h4>
         </center>
         <tr>
             <h6>Nama : {{ Auth::user()->name }}</h6>
-            <h6>Waktu Magang : 20... s/d 20...</h6>
+            <h6>Nama : {{ Auth::user()->nim }}</h6>
+            <h6>Waktu Magang : ........... s/d ........... 20..</h6>
         </tr>
         <table class='table table-bordered'>
             <thead>
@@ -52,7 +53,7 @@
             </tbody>
         </table>
 
-        <p>Menyatakan bahwa yang namanya tertera diatas melakukan magang di PT. Pelindo Multi Terminal.</p>
+        <p>Menyatakan bahwa yang namanya tertera diatas melakukan magang di PT. Pelindo Multi Terminal Tanjung Wangi.</p>
 
         <div style="width: 30%; text-align: left; float: right;">Banyuwangi, <span id="tanggalwaktu"></span></div><br>
         <div style="width: 30%; text-align: left; float: right;">Yang bertanda tangan,</div><br><br><br><br><br>
