@@ -72,7 +72,7 @@
                                         <label>Status</label>
                                         <select name="status" class="form-control @error('status') is-invalid @enderror">
                                             @foreach ($absen as $data)
-                                                @if (($data->waktu > 6) && ($data->waktu < 8))
+                                                @if (($data->waktu > 7) && ($data->waktu < 9))
                                                     <option value="Tepat Waktu">Absen</option>
                                                 @else
                                                     <option value="Terlambat">Terlambat</option>

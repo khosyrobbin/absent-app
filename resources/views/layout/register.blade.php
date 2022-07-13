@@ -123,6 +123,16 @@
                             <form role="form" method="POST" action="{{ route('register') }}">
                                 @csrf
                                 <div class="mb-3">
+                                    <input id="nim"  class="form-control"
+                                        @error('nim') is-invalid @enderror" name="nim"
+                                        value="{{ old('nim') }}" placeholder="NIM" >
+                                    @error('nim')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="mb-3">
                                     <input id="name" type="text" class="form-control"
                                         @error('name') is-invalid @enderror" name="name"
                                         value="{{ old('name') }}" placeholder="Name" aria-label="Name">
@@ -132,15 +142,15 @@
                                         </span>
                                     @enderror
                                 </div>
-                                {{-- <div class="mb-3">
-                                    <input id="no_telpon" class="form-control" @error('no_telpon') is-invalid @enderror"
-                                        name="no_telpon" placeholder="No HP">
-                                    @error('no_telpon')
+                                <div class="mb-3">
+                                    <input id="instansi" class="form-control" @error('instansi') is-invalid @enderror"
+                                        name="instansi" placeholder="Instansi">
+                                    @error('instansi')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div> --}}
+                                </div>
                                 <div class="mb-3">
                                     <input id="email" type="email"
                                         class="form-control @error('email') is-invalid @enderror" name="email"
