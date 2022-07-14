@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\AbsenModel;
+// use Illuminate\Support\Carbon;
 use Carbon\Carbon;
+use Carbon\Traits\Date;
 
 class TabelController extends Controller
 {
