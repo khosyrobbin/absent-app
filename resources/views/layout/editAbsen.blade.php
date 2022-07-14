@@ -67,7 +67,7 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select name="status" class="form-control @error('status') is-invalid @enderror" value="{{$absen->status}}">
@@ -75,7 +75,7 @@
                                             <option value="ijin">Ijin</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary pull-right">Simpan</button>

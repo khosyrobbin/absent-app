@@ -38,14 +38,26 @@ class TabelController extends Controller
         Request()->validate([
             'id' => 'required',
             'deskripsi' => 'required',
-            'status' => 'required',
+            // 'status' => 'required',
         ]);
 
         $data = [
             'id' => Request()->id,
             'deskripsi' => Request()->deskripsi,
-            'status' => Request()->status,
+            // 'status' => Request()->status,
         ];
+
+        $mytime = Carbon::now()->format('H:i:s');
+
+        // $time['waktu'] = time('H:i:s');
+        if (strtotime($mytime) >= strtotime('07:00:00') && strtotime($mytime) <= strtotime('08:30:00')) {
+            $data['status'] = 'Masuk';
+        } else if (strtotime($mytime) > strtotime('08:00:00') && strtotime($mytime) <= strtotime('17:00:00')){
+            $data['status'] = 'Telat';
+        } else {
+            $data['status'] = 'Alpha';
+        }
+
 
         $this->AbsenModel->addData($data);
         return redirect()->route('tabel')->with('pesan','Berhasil');
@@ -65,7 +77,7 @@ class TabelController extends Controller
             'id' => 'required',
             // 'waktu' => 'required',
             'deskripsi' => 'required',
-            'status' => 'required',
+            // 'status' => 'required',
             // 'tanggal' => 'required',
         ]);
 
@@ -73,7 +85,7 @@ class TabelController extends Controller
             'id' => Request()->id,
             // 'waktu' => Request()->waktu,
             'deskripsi' => Request()->deskripsi,
-            'status' => Request()->status,
+            // 'status' => Request()->status,
             // 'tanggal' => Request()->tanggal,
         ];
 

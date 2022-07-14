@@ -67,15 +67,21 @@
                                         </div>
                                     </div>
                                 </div> --}}
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label>Status</label>
                                         <select name="status" class="form-control @error('status') is-invalid @enderror">
-                                            <option value="absen">Absen</option>
-                                            <option value="ijin">Ijin</option>
+                                        @foreach ($absen as $data)
+                                            @if (strtotime($data->waktu) >= strtotime('07:00:00') && strtotime($data->waktu) <= strtotime('15:33:00'))
+                                                <option value="absen">Absen</option>
+                                            @else
+                                                <option value="telat">Telat</option>
+                                            @endif
+                                        @endforeach
+                                        <option value="ijin">ijin</option>
                                         </select>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary pull-right">Simpan</button>
