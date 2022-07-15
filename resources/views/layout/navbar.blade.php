@@ -10,6 +10,10 @@
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">Dashboard</li>
                 @elseif (request()->is('tabel'))
                     <li class="breadcrumb-item text-sm text-white active" aria-current="page">Absen</li>
+                @elseif (request()->is('profil'))
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Profil</li>
+                @elseif (request()->is('report'))
+                    <li class="breadcrumb-item text-sm text-white active" aria-current="page">Report</li>
                 @endif
             </ol>
             @if (request()->is('/'))
@@ -18,6 +22,10 @@
                 <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6>
             @elseif (request()->is('tabel'))
                 <h6 class="font-weight-bolder text-white mb-0">Absen</h6>
+            @elseif (request()->is('profil'))
+                <h6 class="font-weight-bolder text-white mb-0">Profil</h6>
+            @elseif (request()->is('report'))
+                <h6 class="font-weight-bolder text-white mb-0">Report</h6>
             @endif
             {{-- <h6 class="font-weight-bolder text-white mb-0">Dashboard</h6> --}}
         </nav>

@@ -13,6 +13,7 @@ class AbsenModel extends Model
     {
         return DB::table('absens')
         ->join('users', 'users.id', '=', 'absens.id')
+        ->orderBy('tanggal','asc')
         ->get();
     }
     public function addData($data){
@@ -22,7 +23,6 @@ class AbsenModel extends Model
         return DB::table('absens')->where('id_absen', $id_absen)
         ->join('users', 'users.id', '=', 'absens.id')
         ->first();
-
     }
     public function editData($id_absen, $data){
         DB::table('absens')->where('id_absen', $id_absen)->update($data);

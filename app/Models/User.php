@@ -47,8 +47,17 @@ class User extends Authenticatable
     public function allData(){
         return DB::table('users')->paginate(5);
     }
-
     public function addData($data){
         DB::table('users')->insert($data);
+    }
+    public function detailData($id){
+        return DB::table('users')->where('id', $id)
+        ->first();
+    }
+    public function editData($id, $data){
+        DB::table('users')->where('id', $id)->update($data);
+    }
+    public function deleteData($id){
+        DB::table('users')->where('id', $id)->delete();
     }
 }

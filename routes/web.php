@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TabelController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +35,10 @@ Route::get('/tabel/edit/{id_absen}', [TabelController::class, 'edit']);
 Route::post('/tabel/update/{id_absen}', [TabelController::class, 'update']);
 Route::get('/tabel/delete/{id_absen}', [TabelController::class, 'delete']);
 Route::get('/tabel/cari', [TabelController::class, 'cari']);
+
+Route::get('/report', [ReportController::class, 'index'])->name('report');
+
+Route::get('/profil', [ProfileController::class, 'index'])->name('profil');
+Route::get('/profil/edit/{id}', [ProfileController::class, 'edit']);
+Route::post('/profil/update/{id}', [ProfileController::class, 'update']);
+Route::get('/profil/delete/{id}', [ProfileController::class, 'delete']);
