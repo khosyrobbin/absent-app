@@ -13,7 +13,7 @@
                             <table class="table text-center">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
+                                        <th>No.</th>
                                         <th>Nama</th>
                                         <th>Deskrisi</th>
                                         <th>Tanggal</th>
