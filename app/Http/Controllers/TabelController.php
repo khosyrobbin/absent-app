@@ -47,6 +47,8 @@ class TabelController extends Controller
             // 'status' => Request()->status,
         ];
 
+        config(['app.locale' => 'id']);
+        Carbon::setLocale('id');
         $mytime = Carbon::now()->format('H:i:s');
 
         // $time['waktu'] = time('H:i:s');
