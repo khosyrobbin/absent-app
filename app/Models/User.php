@@ -60,4 +60,8 @@ class User extends Authenticatable
     public function deleteData($id){
         DB::table('users')->where('id', $id)->delete();
     }
+    public function tambah(){
+        return DB::table('users')
+        ->get();
+    }
 }

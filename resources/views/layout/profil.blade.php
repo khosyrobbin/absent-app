@@ -5,9 +5,19 @@
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
+
+                    {{-- PESAN --}}
+                    @if (session('pesan'))
+                        <div class="alert alert-success alert-dismissible">
+                            {{-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> --}}
+                            {{ session('pesan') }}.
+                        </div>
+                    @endif
+
                     <div class="card mb-4">
                         <div class="card-header pb-0">
                             {{-- <h6>Authors table</h6> --}}
+                            {{-- <a class="btn bg-gradient-dark mb-0" href="/profil/add"><i class="fas fa-plus"></i>Tambah User</a> --}}
                         </div>
                         <div class="card-body px-0 pt-0 pb-2">
                             <div class="table-responsive p-0">
@@ -34,10 +44,11 @@
                                                     <td>{{ $data->email }}</td>
                                                     <td>
                                                         <a href="/profil/edit/{{ $data->id }}"
-                                                            class="btn btn-warning"><i class="fas fa-pencil-alt me-2" aria-hidden="true"></i></a>
+                                                            class="btn btn-warning"><i class="fas fa-pencil-alt me-2"
+                                                                aria-hidden="true"></i></a>
                                                         <a href="/profil/delete/{{ $data->id }}"
                                                             class="btn btn-danger"><i class="far fa-trash-alt me-2"></i></a>
-                                                            </td>
+                                                    </td>
                                                 </tr>
                                             @endif
                                         @endforeach

@@ -60,7 +60,6 @@ class TabelController extends Controller
             $data['status'] = 'Alpha';
         }
 
-
         $this->AbsenModel->addData($data);
         return redirect()->route('tabel')->with('pesan','Berhasil');
     }

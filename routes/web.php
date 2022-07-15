@@ -42,3 +42,5 @@ Route::get('/profil', [ProfileController::class, 'index'])->name('profil');
 Route::get('/profil/edit/{id}', [ProfileController::class, 'edit']);
 Route::post('/profil/update/{id}', [ProfileController::class, 'update']);
 Route::get('/profil/delete/{id}', [ProfileController::class, 'delete']);
+Route::get('/profil/add', [ProfileController::class, 'add']);
+Route::post('/profil/simpan', [ProfileController::class, 'simpan']);
