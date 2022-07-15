@@ -16,8 +16,8 @@ class CreateAbsensTable extends Migration
     {
         Schema::create('absens', function (Blueprint $table) {
             $table->id('id_absen');
-            $table->date('tanggal')->default(DB::raw('CURRENT_TIMESTAMP'))->setlocale('id');
-            $table->time('waktu')->default(DB::raw('CURRENT_TIMESTAMP'))->setlocale('id');
+            $table->date('tanggal')->default(DB::raw('CURRENT_TIMESTAMP','Asia/Jakarta'))->setlocale('id');
+            $table->time('waktu')->default(DB::raw('CURRENT_TIMESTAMP','Asia/Jakarta'))->setlocale('id');
             $table->string('deskripsi');
             $table->string('status');
             $table->timestamps();
