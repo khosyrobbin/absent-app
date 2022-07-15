@@ -30,9 +30,7 @@
                                         <label>Deskripsi</label>
                                         {{-- <input name="deskripsi" class="form-control @error('deskripsi') is-invalid @enderror" type="text"> --}}
                                         <select name="deskripsi" class="form-control @error('id') is-invalid @enderror">
-                                            <option value="">-- Pilih --</option>
                                             <option value="Magang">Magang</option>
-                                            <option value="Pegawai">Pegawai</option>
                                         </select>
                                         <div class="text-danger">
                                             @error('deskripsi')

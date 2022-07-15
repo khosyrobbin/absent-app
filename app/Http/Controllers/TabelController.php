@@ -52,7 +52,7 @@ class TabelController extends Controller
         // $time['waktu'] = time('H:i:s');
         if (strtotime($mytime) >= strtotime('07:00:00') && strtotime($mytime) <= strtotime('08:30:00')) {
             $data['status'] = 'Masuk';
-        } else if (strtotime($mytime) > strtotime('08:00:00') && strtotime($mytime) <= strtotime('17:00:00')){
+        } else if (strtotime($mytime) > strtotime('08:30:00') && strtotime($mytime) <= strtotime('17:00:00')){
             $data['status'] = 'Telat';
         } else {
             $data['status'] = 'Alpha';
