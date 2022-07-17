@@ -14,6 +14,7 @@ class AbsenModel extends Model
         return DB::table('absens')
         ->join('users', 'users.id', '=', 'absens.id')
         ->orderBy('tanggal','asc')
+        ->orderBy('waktu','asc')
         ->get();
     }
     public function addData($data){

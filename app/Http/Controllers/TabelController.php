@@ -50,14 +50,21 @@ class TabelController extends Controller
         config(['app.locale' => 'id']);
         Carbon::setLocale('id');
         $mytime = Carbon::now()->format('H:i:s');
+        $mydate = Carbon::now();
 
         // $time['waktu'] = time('H:i:s');
         if (strtotime($mytime) >= strtotime('07:00:00') && strtotime($mytime) <= strtotime('08:30:00')) {
             $data['status'] = 'Masuk';
+            $data['tanggal'] = $mydate;
+            $data['waktu'] = $mytime;
         } else if (strtotime($mytime) > strtotime('08:30:00') && strtotime($mytime) <= strtotime('17:00:00')){
             $data['status'] = 'Telat';
+            $data['tanggal'] = $mydate;
+            $data['waktu'] = $mytime;
         } else {
             $data['status'] = 'Alpha';
+            $data['tanggal'] = $mydate;
+            $data['waktu'] = $mytime;
         }
 
         $this->AbsenModel->addData($data);
