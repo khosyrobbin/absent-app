@@ -101,6 +101,12 @@
                                                     {{-- {{ __('Forgot Your Password?') }} --}}
                                                 </a>
                                             @endif
+                                            <li class="nav-item">
+                                                <a class="nav-link me-2" href="{{ '/register' }}">
+                                                    <i class="fas fa-user-circle opacity-6  me-1"></i>
+                                                    Register
+                                                </a>
+                                            </li>
                                         </div>
                                     </form>
                                 </div>
