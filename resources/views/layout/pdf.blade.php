@@ -3,6 +3,9 @@
 
 <head>
     <title>LAPORAN MAGANG {{ Auth::user()->name }}</title>
+    <tr>
+        <td align="center" width="70%">
+    </tr>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
@@ -18,22 +21,23 @@
         <center>
             <img src="https://pelindo.co.id/uploads/config/kkX2Ik4l3I5cteU6ZTTKHpbYuWkfNGdBZEhE5lrT.png" alt=""
                 class="navbar-brand-img h-10" width="240" height="70">
-            <h4 style="font-weight: bold">LAPORAN ABSEN MAGANG PELINDO</h4>
+            <h4 style="font-family: 'Times New Roman'; font-weight: bold">LAPORAN ABSEN MAGANG PT. PELINDO MLTI TERMINAL</h4>
         </center>
         <tr>
-            <h6>Nama : {{ Auth::user()->name }}</h6>
-            <h6>Nama : {{ Auth::user()->nim }}</h6>
-            <h6>Waktu Magang : ........... s/d ........... 20..</h6>
+            <h6 style="width: 25%">Nama : {{ Auth::user()->name }}</h6>
+            <h6 style="width: 25%">NIM : {{ Auth::user()->nim }}</h6>
+            <h6 style="width: 25%">Universitas : {{ Auth::user()->instansi }}</h6>
+            <h6 style="width: 25%">Waktu Magang : ........... s/d ........... 20..</h6>
         </tr>
         <table class='table table-bordered'>
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Nama</th>
-                    <th>Deskrisi</th>
-                    <th>Tanggal</th>
-                    <th>Waktu</th>
-                    <th>Status</th>
+                    <th style="background-color: #c6c6c6">No</th>
+                    <th style="background-color: #c6c6c6">Nama</th>
+                    <th style="background-color: #c6c6c6">Deskrisi</th>
+                    <th style="background-color: #c6c6c6">Tanggal</th>
+                    <th style="background-color: #c6c6c6">Waktu</th>
+                    <th style="background-color: #c6c6c6">Status</th>
                 </tr>
             </thead>
             <tbody>

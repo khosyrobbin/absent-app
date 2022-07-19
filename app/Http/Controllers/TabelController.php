@@ -68,7 +68,7 @@ class TabelController extends Controller
         }
 
         $this->AbsenModel->addData($data);
-        return redirect()->route('tabel')->with('pesan','Berhasil');
+        return redirect()->route('tabel')->with('pesan','Absen Berhasil Ditambahkan');
     }
 
     // edit
@@ -126,5 +126,4 @@ class TabelController extends Controller
         // mengirim data pegawai ke view index
         return view('layout.tabel', $data);
     }
-
 }
