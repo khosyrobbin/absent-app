@@ -21,14 +21,27 @@
         <center>
             <img src="https://pelindo.co.id/uploads/config/kkX2Ik4l3I5cteU6ZTTKHpbYuWkfNGdBZEhE5lrT.png" alt=""
                 class="navbar-brand-img h-10" width="240" height="70">
-            <h4 style="font-family: 'Times New Roman'; font-weight: bold">LAPORAN ABSEN MAGANG PT. PELINDO MLTI TERMINAL</h4>
+            <h4 style="font-weight: bold">LAPORAN ABSEN MAGANG PT. PELINDO MLTI TERMINAL</h4>
+            <a>Jalan Situbondo - Banyuwangi, Klatak, Kecamatan Banyuwangi, Lkr.
+                Kp. Baru, Bulusan, Kec. Kalipuro, Kabupaten Banyuwangi, Jawa
+                Timur 68455</a>
+            <hr style="height: 2px" size="10"/>
         </center>
-        <tr>
-            <h6 style="width: 25%">Nama : {{ Auth::user()->name }}</h6>
-            <h6 style="width: 25%">NIM : {{ Auth::user()->nim }}</h6>
-            <h6 style="width: 25%">Universitas : {{ Auth::user()->instansi }}</h6>
-            <h6 style="width: 25%">Waktu Magang : ........... s/d ........... 20..</h6>
-        </tr>
+        <table width="15%">
+            <tr>
+                <td><h6>Nama</h6></td>
+                <td><h6>: {{Auth::user()->name}}</h6></td>
+            </tr>
+            <tr>
+                <td><h6>NIM</h6></td>
+                <td><h6>: {{Auth::user()->nim}}</h6></td>
+            </tr>
+            <tr>
+                <td><h6>Universitas</h6></td>
+                <td><h6>: {{Auth::user()->instansi}}</h6></td>
+            </tr>
+        </table>
+
         <table class='table table-bordered'>
             <thead>
                 <tr>
