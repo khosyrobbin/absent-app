@@ -14,7 +14,8 @@
 
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <a id="demo" class="btn bg-gradient-dark mb-0" onclick="getLocation()"><i class="fas fa-plus"></i>&nbsp;&nbsp;Absen</a>
+                        <a id="demo" class="btn bg-gradient-dark mb-0" href="/tabel/add"><i class="fas fa-plus"></i>&nbsp;&nbsp;Absen</a>
+                        {{-- <a id="demo" class="btn bg-gradient-dark mb-0" onclick="getLocation()"><i class="fas fa-plus"></i>&nbsp;&nbsp;Absen</a>
                         <script>
                             var x = document.getElementById("demo");
                             var validDistance = 1;
@@ -58,7 +59,7 @@
                                     x.innerHTML = "lokasi anda terlalu jauh";
                                 }
                             }
-                        </script>
+                        </script> --}}
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
