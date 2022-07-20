@@ -85,7 +85,7 @@ class TabelController extends Controller
             'id' => 'required',
             // 'waktu' => 'required',
             'deskripsi' => 'required',
-            // 'status' => 'required',
+            'status' => 'required',
             // 'tanggal' => 'required',
         ]);
 
@@ -93,7 +93,7 @@ class TabelController extends Controller
             'id' => Request()->id,
             // 'waktu' => Request()->waktu,
             'deskripsi' => Request()->deskripsi,
-            // 'status' => Request()->status,
+            'status' => Request()->status,
             // 'tanggal' => Request()->tanggal,
         ];
 

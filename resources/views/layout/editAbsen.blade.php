@@ -15,9 +15,15 @@
                                     <div class="form-grup">
                                         <label>Nama</label>
                                         {{-- <input name="id" class="form-control @error('id') is-invalid @enderror" value="{{ Auth::user()->id }}" readonly> --}}
-                                        <select name="id" class="form-control @error('id') is-invalid @enderror" readonly>
-                                            <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
-                                        </select>
+                                        @if (auth()->user()->level == 1)
+                                            <select name="id" class="form-control @error('id') is-invalid @enderror" readonly>
+                                                <option value="{{ $absen->id }}">{{ $absen->name }}</option>
+                                            </select>
+                                        @elseif (auth()->user()->level == 2)
+                                            <select name="id" class="form-control @error('id') is-invalid @enderror" readonly>
+                                                <option value="{{ Auth::user()->id }}">{{ Auth::user()->name }}</option>
+                                            </select>
+                                        @endif
                                         <div class="text-danger">
                                             @error('id')
                                                 Nama Salah/Kosong/Sudah digunakan
@@ -32,7 +38,6 @@
                                         <select name="deskripsi" class="form-control @error('id') is-invalid @enderror">
                                             <option value="{{$absen->deskripsi}}">{{$absen->deskripsi}}</option>
                                             <option value="Magang">Magang</option>
-                                            <option value="Pegawai">Pegawai</option>
                                         </select>
                                         <div class="text-danger">
                                             @error('deskripsi')
@@ -41,41 +46,22 @@
                                         </div>
                                     </div>
                                 </div>
-                                {{-- <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label>Tanggal</label>
-                                        <input name="tanggal" class="form-control @error('waktu') is-invalid @enderror" type="date">
-                                        <div class="text-danger">
-                                            @error('tanggal')
-                                                Tanggal Salah/Kosong
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Waktu</label>
-                                        <script>
-                                            var dt = new Date();
-                                            document.getElementById("Swaktu").innerHTML = dt.toLocaleTimeString();
-                                        </script>
-                                        <input name="waktu" type="time" class="form-control @error('waktu') is-invalid @enderror">
-                                        <div class="text-danger">
-                                            @error('waktu')
-                                                Waktu Salah/Kosong
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div> --}}
-                                {{-- <div class="col-md-6">
-                                    <div class="form-group">
                                         <label>Status</label>
-                                        <select name="status" class="form-control @error('status') is-invalid @enderror" value="{{$absen->status}}">
-                                            <option value="{{$absen->status}}">{{$absen->status}}</option>
-                                            <option value="ijin">Ijin</option>
-                                        </select>
+                                        @if (auth()->user()->level == 1)
+                                            <select name="status" class="form-control @error('status') is-invalid @enderror">
+                                                <option value="{{$absen->status}}">{{$absen->status}}</option>
+                                                <option value="Masuk">Masuk</option>
+                                                <option value="Ijin">Ijin</option>
+                                            </select>
+                                        @elseif (auth()->user()->level == 2)
+                                            <select name="status" class="form-control @error('status') is-invalid @enderror" readonly>
+                                                <option value="{{ $absen->status }}">{{ $absen->status }}</option>
+                                            </select>
+                                        @endif
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                             <div class="form-group">
                                 <button class="btn btn-primary pull-right">Simpan</button>
