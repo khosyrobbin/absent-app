@@ -27,7 +27,7 @@
                 Timur 68455</a>
             <hr style="height: 2px" size="10"/>
         </center>
-        <table width="15%">
+        <table>
             <tr>
                 <td><h6>Nama</h6></td>
                 <td><h6>: {{Auth::user()->name}}</h6></td>
